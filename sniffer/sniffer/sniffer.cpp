@@ -116,7 +116,7 @@ void sniffer::showNetworkCards()
 {
 	int i = 0;
 	
-	/* 获取本地网卡信息 */
+	/* 鑾峰彇鏈湴缃戝崱淇℃伅 */
 	if (pcap_findalldevs_ex(PCAP_SRC_IF_STRING, NULL, &alldevs, errbuf) == -1)
 	{
 		ui.comboBox->addItem("error:" + QString(errbuf));
@@ -177,7 +177,7 @@ int sniffer::capture()
 	}
 	else
 	{
-		if (pcap_datalink(pointer) != DLT_EN10MB) return false;      // 必须是以太网协议
+		if (pcap_datalink(pointer) != DLT_EN10MB) return false;      // 蹇呴』鏄互澶綉鍗忚
 		statusBar()->showMessage(device->description);	
 		return pointer != nullptr;
 	}
@@ -250,7 +250,7 @@ void sniffer::on_tableWidget_cellClicked(int  row, int column)
 	}
 	else
 	{
-		if (fi = true)
+		if (fi == true)
 		{
 			row = select[row];
 		}
